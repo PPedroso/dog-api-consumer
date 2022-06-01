@@ -4,5 +4,25 @@
     </head>
     <body>
         <h1>This is the body of the index page</h1>
+
+        <a href="/all_breeds">Get all breeds</a>
+
+        <form action="images_by_breed">
+            <label>Input breed</label>
+            <input placeholder="Input breed" type="text" name="breed">
+            <button type="submit">Find</button>
+        </form>
+
+        <div id="breeds">
+            {% for breed in data.breeds %}
+                {{ breed }}
+            {% endfor %}
+        </div>
+        <div id="breed_images">
+            {% for image in data.dog_images %}
+               <img src={{ image }}></img> 
+            {% endfor %}
+        </div>
+
     </body>
 </html>
